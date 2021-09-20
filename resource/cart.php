@@ -41,7 +41,7 @@ if(isset($_GET['delete'])){
 }
 
 function cart()
-{
+{ 
     $total = 0;
     $items = 0;
     $item_name = 1;

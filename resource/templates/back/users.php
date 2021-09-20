@@ -23,7 +23,7 @@
             </thead>
             <tbody>
 
-                <?php display_report(); ?>
+                <?php display_usetr(); ?>
 
                     
 

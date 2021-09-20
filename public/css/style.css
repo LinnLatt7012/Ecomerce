@@ -4,4 +4,5 @@
 
 .choosen-item{
     background-color: rgba(54, 54, 54, 0.459);
+    display: block;
 }

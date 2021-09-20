@@ -92,6 +92,7 @@ function get_products()
     $query = query("SELECT * FROM product");
     confirm_q($query);
     while ($row = fetch_array($query)) {
+        $des = substr($row["product_description"],0,100);
         $product = <<<DELIMETER
         <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
@@ -100,7 +101,7 @@ function get_products()
                                 <h4 class="pull-right">&#36;{$row["product_price"]}</h4>
                                 <h4><a href="item.php?P_id={$row["product_id"]}">{$row["product_title"]}</a>
                                 </h4>
-                                <p class="seemore" style="height: 80px;";>{$row["product_description"]}</p>
+                                <p class="seemore" style="height: 80px;";>{$des}<a href="item.php?P_id={$row["product_id"]}" class="">...See More...</a></p>
                                 <a class="btn btn-primary" target="" href="../resource/cart.php?add={$row["product_id"]}">Add to cart</a>
                             </div>
                         </div>
@@ -174,7 +175,7 @@ function get_products_in_shop_page()
 <a href="item.php?P_id={$row["product_id"]}"><img src="../resource/uploads/{$row["product_image"]}" alt="" style="height: 300px;";></a>
     <div class="caption">
         <h3>{$row["product_title"]}</h3>
-        <p>{$row["short_desc"]}</p>
+        <p class="seemore">{$row["short_desc"]}</p>
         <p>
             <a href="../resource/cart.php?add={$row["product_id"]}" class="btn btn-primary">Buy Now!</a> <a href="item.php?P_id={$row["product_id"]}" class="btn btn-default">More Info</a>
         </p>
@@ -193,13 +194,12 @@ function login_user()
     if (isset($_POST['login_submit'])) {
         $username = escape_string($_POST['username']);
         $password = escape_string($_POST['password']);
-        $query = query("SELECT * FROM users where username ='{$username}' and password ='{$password}'");
-        confirm_q($query);
+        $query = query("SELECT * FROM users where user_name ='{$username}' and password ='{$password}'");
+        confirm_q($query); 
         $IsUser = mysqli_num_rows($query);
         if ($IsUser == 0) {
             set_msg("Login failed!!!!!");
             redirect("login.php");
-
         }
         else {
             $_SESSION['username']=$username;
