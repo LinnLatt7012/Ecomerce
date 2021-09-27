@@ -205,7 +205,7 @@ function login_user()
         else {
             $_SESSION['username']=$username;
             //set_msg("Welcome to Admin {$username}!!!!!");
-            redirect("admin");
+            redirect("public".DS."admin");
         }
 
     }
