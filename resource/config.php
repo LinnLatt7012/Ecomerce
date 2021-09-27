@@ -6,7 +6,7 @@ $image_directory="uploads";
 defined ("DS") ? null: define("DS",DIRECTORY_SEPARATOR);//Define what separate need to use 
 
 defined ("DIRE") ? null: define("DIRE", __DIR__);
-defined ("TEMPLATE_FRONT") ? null: define("TEMPLATE_FRONT", __DIR__.DS."templates\\front");
+defined ("TEMPLATE_FRONT") ? null: define("TEMPLATE_FRONT", __DIR__.DS."templates".DS."front");
 defined ("TEMPLATE_BACK") ? null: define("TEMPLATE_BACK", __DIR__.DS."templates\\back");
 defined ("UPLOAD_DIR") ? null: define("UPLOAD_DIR", __DIR__.DS.$image_directory);
 //echo "<h1>".TEMPLATE_FRONT."</h1>";
