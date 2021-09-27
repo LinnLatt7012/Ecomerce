@@ -1,5 +1,5 @@
 <?php
-require_once("..\..\\resource\\config.php");
+require_once("../../resource/config.php");
 $active;
 // require_once( DIRE.DS."cart.php");
 ?>
