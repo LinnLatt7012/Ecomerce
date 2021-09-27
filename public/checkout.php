@@ -19,7 +19,7 @@ require_once( DIRE.DS."cart.php");
         <h4 class="text-center bg-danger"><?php display_msg();?></h4>
         <h1>Checkout</h1>
 
-        <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+        <form action="thank_you.php?amt=123.00&cc=USD&tx=4405A&st=Compelte" method="post">
             <input type="hidden" name="cmd" value="_cart">
             <input type="hidden" name="business" value="business7012@ecomerce.com">
             <input type="hidden" name="currency_code" value="US">

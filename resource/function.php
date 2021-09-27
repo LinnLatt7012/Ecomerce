@@ -146,13 +146,14 @@ function get_products_in_cat_page()
     $query = query("SELECT * FROM product where product_category_id = " . escape_string($_GET['cat_id']) . "");
     confirm_q($query);
     while ($row = fetch_array($query)) {
+        $des = substr($row["product_description"],0,100);
         $product = <<<DELIMETER
 <div class="col-md-3 col-sm-6 hero-feature">
 <div class="thumbnail">
 <a href="item.php?P_id={$row["product_id"]}" ><img src="../resource/uploads/{$row["product_image"]}" alt="" style="height: 300px;";></a>
     <div class="caption">
         <h3>{$row["product_title"]}</h3>
-        <p class="seemore" style="height: 80px;"; >{$row["product_description"]}</p>
+        <p class="seemore" style="height: 80px;"; >{$des}<a href="item.php?P_id={$row["product_id"]}" class="">...See More...</a></p>
         <p>
             <a href="../resource/cart.php?add={$row["product_id"]}" class="btn btn-primary">Buy Now!</a> <a href="item.php?P_id={$row["product_id"]}" class="btn btn-default">More Info</a>
         </p>
