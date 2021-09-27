@@ -1,12 +1,12 @@
 <?php
-require_once("..\..\\resource\\config.php");
+require_once("../../resource/config.php");
 $active;
 // require_once( DIRE.DS."cart.php");
 ?>
 <?php include(TEMPLATE_BACK.DS."header.php") ?>
 <?php
 if(!isset($_SESSION['username'])){
-    redirect("..\..\\public");
+    header("location: ../login.php");
 } 
 ?>
 

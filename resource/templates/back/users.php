@@ -23,7 +23,7 @@
             </thead>
             <tbody>
 
-                <?php display_usetr(); ?>
+                <?php display_user(); ?>
 
                     
 
