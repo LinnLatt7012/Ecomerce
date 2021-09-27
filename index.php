@@ -1,1 +1,3 @@
-<a href="/public">go to public</a>
+<?php
+ redirect("/public");
+?>
