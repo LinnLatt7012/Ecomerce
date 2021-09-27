@@ -6,7 +6,7 @@ $active;
 <?php include(TEMPLATE_BACK.DS."header.php") ?>
 <?php
 if(!isset($_SESSION['username'])){
-    redirect("..\..\\public");
+    header("location: /public/login.php");
 } 
 ?>
 
